@@ -1,0 +1,84 @@
+/*-- scss:defaults --*/
+
+$font-family-sans-serif: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif !default;
+$presentation-heading-font: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif !default;
+
+
+// @import url('https://fonts.googleapis.com/css2?family=Cutive&display=swap');
+// $presentation-heading-font: 'Cutive', serif;
+// $font-family-sans-serif: 'Cutive', serif;
+
+//@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+//$presentation-heading-font: 'Courier Prime', monospace;
+//$font-family-sans-serif: 'Courier Prime', monospace;
+
+// fonts
+//$font-family-sans-serif: "Computer Modern", "CMU Serif", "Latin Modern Roman", "FreeSerif", serif;
+//$presentation-heading-font: "Computer Modern", "CMU Serif", "Latin Modern Roman", "FreeSerif", serif;
+
+
+//@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+//$presentation-heading-font: 'Zilla Slab', serif;
+//$font-family-sans-serif: 'Zilla Slab', serif;
+
+//@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Zilla+Slab:ital,wght@0,400;1,400&display=swap');
+//$presentation-heading-font: 'Inter', sans-serif;
+//$presentation-heading-font-weight: 700; // Li rende belli decisi
+
+// headings
+$presentation-heading-color: #4657A9 !default;
+$presentation-h1-font-size: 1.8em;
+$presentation-h2-font-size: 1.4em;
+$presentation-h3-font-size: 1.2em;
+
+// presentation subtitle
+.reveal .subtitle {
+  //font-family: "Computer Modern", "CMU Serif", serif;
+  font-size: 28pt;
+  font-style: bold; 
+  color: #555555;   
+}
+
+// 3. (Opzionale) Rimuove il "TUTTO MAIUSCOLO" dai titoli che è di default nel tema simple
+$presentation-heading-text-transform: none;
+
+// Rimuovi il tutto maiuscolo dai titoli per un vero effetto LaTeX/Beamer
+$headings-text-transform: none;
+
+// colors
+$body-bg: #fff !default;
+$body-color: #000 !default;
+$link-color: #17A0C6 !default;
+$selection-bg: #26351c !default;
+
+// font sizes
+$presentation-font-size-root:	32px;
+$presentation-font-smaller: 0.8;
+
+
+
+$callout-style-font-size: .45em;
+$callout-style-font-weight: 400;
+
+// code 
+$code-block-font-size: 0.70em;
+
+/*-- scss:rules --*/
+
+.reveal a {
+  line-height: 1.3em;
+}
+
+/*-- scss:rules --*/
+.chunk-short div.sourceCode {
+  width: max-content; /* Il rettangolo si ferma dove finisce il testo */
+  padding-right: 20px; /* Aggiunge un po' di respiro a destra */
+}
+.purple-block {
+  
+  // Forza il colore su se stesso, sui punti elenco, sui paragrafi e sulle icone SVG
+  &, li, p, span, svg {
+    color: #7B1FA1 !important; /* Sostituisci con il tuo colore */
+    fill: #7B1FA1 !important;  /* Questo serve specificamente per l'icona fa() */
+  }
+}
