@@ -47,16 +47,6 @@ rm(list = ls())
 library(fontawesome)
 ```
 
-## Course material
-
-<br> 
-
-Course material is available on Moodle: 
-
-<br>
-
-> [psico.elearning.unipd.it/course/view.php?id=6998](https://psico.elearning.unipd.it/course/view.php?id=6998)
-
 ## About myself
 
 :::: {.columns}
@@ -112,13 +102,13 @@ Assistant Professor <br>
 ::: {.column width="20%"}
 
 :::{.r-stack}
-![](img/paper_e4.JPG){.absolute top=0 .fragment right=0 width="400"}
+![](img/paper_e4.JPG){.absolute top=0 right=0 width="400"}
 
-![](img/paper_esm.JPG){.absolute top=170 right=0 .fragment width="300"}
+![](img/paper_esm.JPG){.absolute top=170 right=0 width="300"}
 
-![](img/paper_tutorial.JPG){.absolute top=270 right=0 .fragment width="300"}
+![](img/paper_tutorial.JPG){.absolute top=270 right=0 width="300"}
 
-![](img/paper_bp.JPG){.absolute top=375 right=0 .fragment width="400"}
+![](img/paper_bp.JPG){.absolute top=375 right=0 width="400"}
 
 :::
 
@@ -128,369 +118,203 @@ Assistant Professor <br>
 
 ## About yourselfs
 
+<br><br>
+
+Please fill out the [Welcome Survey](https://unipadova.qualtrics.com/jfe/form/SV_2n275jqWjcN34i2) by Thursday, October 1st to help me better tailor the course contents to your background and goals. <br> It only takes 2 minutes!
+
 ## Course outline
-
-::: {style="font-size: 1.1em;"}
-
-- `r fa("heart-pulse", height = "1em", fill="#4657A9")` `PsyPhy` <br>
-Psychophysiology of the stress response <br>
-
-- `r fa("microchip", height = "1em", fill="#4657A9")` `Wearables`  <br>
-Introduction to wearable tech <br>
-
-- `r fa("magnifying-glass-chart", height = "1em", fill="#4657A9")` `Assessment` <br>
-User studies & ambulatory monitoring <br>
-
-- `r fa("laptop-code", height = "1em", fill="#4657A9")` `HandZone` <br>
-Practical section
-
-:::
-
-# Introduction to the course contents
-
-## Laboratory vs. Ambulatory assessment
-
-![](img/labamb.JPG){width="300"}
-
-:::: {.columns}
-
-::: {.column width="50%"}
-### 
-
-<ul>
-  <li class="fragment" data-fragment-index="1">Real-time recording `r fa("check", height = "1em", fill = "green")`</li>
-  <li class="fragment" data-fragment-index="2">High internal validity `r fa("check", height = "1em", fill = "green")`</li>
-  <li class="fragment" data-fragment-index="3">Low ecological validity `r fa("xmark", height = "1em", fill = "red")`</li>
-  <li class="fragment" data-fragment-index="4">Gold-standard recording `r fa("check", height = "1em", fill = "green")`</li>
-</ul>
-:::
-
-::: {.column width="50%"}
-### 
-
-<ul>
-  <li class="fragment" data-fragment-index="1">Real-time recording `r fa("check", height = "1em", fill = "green")`</li>
-  <li class="fragment" data-fragment-index="2">Low internal validity `r fa("xmark", height = "1em", fill = "red")`</li>
-  <li class="fragment" data-fragment-index="3">High external validity `r fa("check", height = "1em", fill = "green")`</li>
-  <li class="fragment" data-fragment-index="4">Ambulatory recording `r fa("xmark", height = "1em", fill = "red")`</li>
-</ul>
-:::
-
-::::
-
-- __Measurement reactivity__ (e.g., white coat effect)
-
-- __Lab-to-real world generalizability__: Lab stressors <br> are not representative of 'natural' stressors in terms of <br> duration, number, nature, and intensity
-
-## Laboratory vs. Ambulatory assessment
-
-::: {width="800"}
-![](img/soccer.PNG)
-
-::: {style="font-size: 0.8em; text-align: center;"}
-
-[Wilhelm & Grossman (2010)](https://doi.org/10.1016/j.biopsycho.2010.01.017)
-
-:::
-:::
-
-# `r fa("r-project", height = "1em", fill="#4657A9")` <br> Short introduction to R
-
-## Why `r fa("r-project", height = "1em", fill="#4657A9")`? {.smaller}
-
-R is an open source programming language and environment <br> for **statistical computing** and **graphics**.
-
-:::: {.columns}
-
-::: {.column width="20%"}
-
-![](img/useR.PNG)
-
-:::
-
-::: {.column width="80%"}
-
-- Open source (not a black box)
-
-- Reproducible & fully controllable
-
-- User friendly (optimized default functions)
-
-- High-quality outputs
-
-- Integrated with LateX, Markdown, Quarto, etc.
-
-- Documented: try `?mean` + thousands of tutorials
-
-- Still don't know how to do it? Ask LLM ;)
-
-- Free software (GNU GP, usable anywhere worldwide)
-
-- Community-based: <br> **R Core Team** periodically updating `base R` <br> + thousands of researchers developing <br> new **packages** exponentially
-
-:::
-
-::::
-
-## RStudio {.smaller}
-
-= Development environment for `r fa("r-project", height = "1em", fill="#4657A9")` using an **optimized graphical interface** <br> to make it simpler.
-
-:::: {.columns}
-
-::: {.column width="60%"}
-
-![](img/RStudio2.PNG)
-
-:::
-
-::: {.column width="40%"}
-
-- **Console**: Just write a command and execute it with `Enter`
-
-- **Source**: R Scripts (`.R`), docs & presentations (`.Rmd`/`qmd`), GUIs (`.app`), etc. <br> \color{red} *To run a command, select it and tap `Ctrl + Enter` or click on the `Run` button on the top-right* \color{red} 
-
-- **Environment**: R objects included in the workspace
-
-:::
-
-::::
-
-## Some basic commands {.smaller}
-
-:::: {.columns}
-
-::: {.column width="50%"}
-
-::: {.chunk-short}
-  
-- Comments (`#`)
-  ```{r}
-  #| echo: true
-  # this is a comment
-  ```
-  
-- Simple mathematical operations
-  ```{r }
-  #| echo: true
-  2 + 2 # sum
-  2 * 2 # multiplication
-  log(3) # natural logarithm
-  exp(1) # exponential function
-  ```
-
-- Longer expressions 
-  ```{r}
-  #| echo: true
-  sqrt(5) * ( (4 - 1/2)^2 - pi/2^(1/3) )
-  ```
-:::
-::: 
-::: {.column width="50%"}
-
-::: {.chunk-short}
-  
-- Assigning values to **objects** (`<-`)
-  ```{r }
-  #| echo: true
-  x <- 3 # creates the 'x' object with value 3
-  x # pint the value of x
-  ```
-
-- Objects' names can include letters, numbers, underscores, and, dots (e.g. `tony`, `tony.1_`)
-  ```{r }
-  #| echo: true
-  tony_32 <- x / 3 # assign a value to the object
-  tony_32 # print the object's value
-  ```
-
-- Key-sensitive but not sensitive to spaces
-  ```{r }
-  #| echo: true
-  #| eval: false
-  Tony_32
-  ```
-  ![](img/error.PNG){width="300"}
-  ```{r }
-  #| echo: true
-  3+tony_32; 3     +  tony_32
-  ```
-:::
-:::
-::::
-
-
-::: {style="font-size: 0.90em;"}
-::: {.purple-block}
-
-- `r fa("laptop-code", height = "1em")` Assign $log(\sqrt{5.5^2})$ to object `a` and $(3 \times 2.2)^2/4$ to object `b`; <br> then sum the two objects (should be 13.45)
-
-:::
-:::
-
-## Relational & logical operators{.smaller}
-
-:::: {.columns}
-
-::: {.column width="50%"}
-
-- Relational operators
-  ```{r }
-  #| echo: true
-  3 == 3 # equal to
-  3 != 3 # different from
-  x >= 3 # higher than or equal to
-  5 %in% c(3, 5, 8) # included in
-  ```
-
-::: 
-::: {.column width="50%"}
-
-- Logical operators
-  ```{r }
-  #| echo: true
-  x <- TRUE
-  y <- !x # negation of y
-  x & (5 < 2) # joined condition
-  x | (5 < 2) # inclusive disjoint
-  ```
-
-:::
-::::
-
-::: {.purple-block}
-
-- `r fa("laptop-code", height = "1em")` Write a command to test whether object `a` is equal to object `b` <br> or higher than the sum of `a + b` (should be FALSE)
-
-:::
-
-## Types of R objects (classes) {.smaller}
-
-:::: {.columns}
-
-::: {.column width="50%"}
-  
-- **Logical**
-  ```{r }
-  #| echo: true
-  x <- TRUE
-  x <- T # "TRUE" or "T" is the same
-  class(x)
-  ```
-
-- **Numeric**
-  ```{r }
-  #| echo: true
-  x <- 1.4
-  class(x)
-  ```
-
-- **Integer**
-  ```{r }
-  #| echo: true
-  as.integer(x)
-  ```
-
-- **Character**
-  ```{r }
-  #| echo: true
-  x <- "I    like R"
-  x # within "" the space matters!
-  ``` 
-  
-:::
-
-::: {.column width="50%"}
-  
-- **Vector**: series of values with the same class (e.g., all numeric) combined with the function `c()` (*combine*)
-  ```{r }
-  #| echo: true
-  x <- c(1, 10.5, 3, 2)
-  x + 1
-  sqrt(x)
-  y <- c("I","like", "R")
-  ```
-
-- **Matrix**: table with `nrow * ncol`
-  ```{r }
-  #| echo: true
-  x <- matrix(1:12, nrow = 3, ncol = 4)
-  rownames(x) <- y # row names
-  x
-  ```
-:::
-::::
-
-## Types of R objects: `data.frame` {.smaller}
 
 ::: {.nonincremental}
 
-Bidimensional structure of vectors with different
-classes (e.g., numeric, character, factor):
-`data.frame(name_var1 = c(...), name_var2 = ...)`
+20-hour (2 CFU) Small Group Activity in blended modality, <br> with a first theroretical part online (10 hours) <br> and a second practical part in person (10 hours):
+
+::: {style="font-size: 1.1em;"}
+
+- `r fa("heart-pulse", height = "1em", fill="#4657A9")` `What happens in the body?` <br>
+Psychophysiology of the stress response <br>
+
+- `r fa("microchip", height = "1em", fill="#4657A9")` `How can we measure it?`  <br>
+Introduction to wearable tech <br>
+
+- `r fa("magnifying-glass-chart", height = "1em", fill="#4657A9")` `What can we learn about technology users?` <br>
+User studies & ambulatory monitoring <br> <br>
+
+- `r fa("laptop-code", height = "1em", fill="#4657A9")` `Hands on wearables and biosignals` <br>
+Practical sessions
 
 :::
+
+:::
+
+## Video lectures on theory, methods & applications
+
+::: {.nonincremental}
+
+`r fa("heart-pulse", height = "1em", fill="#4657A9")` `What happens in the body?`
+
+::: {style="font-size: 0.7em;"}
+
+  1. The Psychophysiology of Stress: From Stressful Exposures to the Autonomic Response
+  2. Stress, Cognitive Appraisals and Recovery
+  3. Physiological Markers of Stress and Recovery
+  
+:::
+  
+`r fa("microchip", height = "1em", fill="#4657A9")` `How can we measure it?`
+
+::: {style="font-size: 0.7em;"}
+
+  4. Wearable Technologies and Biosignals: An Introduction
+  5. ECG & PPG to measure Heart Rate and Heart Rate Variability
+  6. Electrodermal Activity and Skin Conductance
+  7. Accelerometry & Actigraphy to measure Physical Activity and Sleep
+  8. Can We Trust Wearable Sensors? Validity, Artefacts, Ethics and Privacy
+
+:::
+
+`r fa("magnifying-glass-chart", height = "1em", fill="#4657A9")` `What can we learn about technology users?` 
+
+::: {style="font-size: 0.7em;"}
+
+  9. Wearables for User Studies: Human–Technology and Technology-Mediated Interaction
+  10. Wearables in the Wild: Ambulatory Assessment and e-Health
+
+:::
+:::
+
+## Practical sessions on cases studies, signal recording, pre-processing, & visualization
+
+::: {.nonincremental}
+
+The second part includes five in-person meetings <br> with practical activities in small groups:
+
+1. Wearable demos, cases studies, and research questions
+
+2. Research protocols and data recording
+
+3. Signal pre-processing in `r fa("r-project", height = "1em", fill="#4657A9")`
+
+4. From signals to user-study results in `r fa("r-project", height = "1em", fill="#4657A9")`
+
+5. User study showcase
+
+::: {style="font-size: 0.7em;"}
+
+Participation to the in-person practical sessions is strongly recommended to to fulfill the requirements for the small group activity. You are free to use your own laptop or the computers available in the room (yes, we'll be in a computer room).
+
+:::
+
+:::
+
+## Course program: Dates and places
+
+::: {.nonincremental}
+
+::: {style="font-size: 0.8em;"}
 
 :::: {.columns}
 
 ::: {.column width="50%"}
 
-- `str(df_name)` returns the df structure
-
-  ```{r }
-  #| echo: true
-  x <- data.frame( # create df
-     Num = 1:4,
-     Char = c("a","b","c","d"),
-     Logi = c(T,F,F,T))
-  x # print df
-  str(x) # df structure
-  ```
- 
-:::
+- **First part online**: 20-min asynchronous video lectures with slides and interactive activities in Moodle
   
-::: {.column width="50%"}
-
-- To select a column (vector) from a dataframe, we can use the `$` symbol with the syntax `df_name$column_name`
-  ```{r }
-  #| echo: true
-  x$Char # selecting the Char column
-  x$Char[2] # second value from the Char column
-  x$Char[2] == x[2,2] # equivalent commands
-  x[x$Num < 3,] # selecting cases with Num < 3
-  ``` 
+```{r}
+p <- data.frame(Week=1:5,
+           Date=c("Sept 28th","Oct 5th","Oct 12th","Oct 19th","Oct 26th"),
+           vl=c("1-2","3-4","5-6","7-8","9-10"))
+colnames(p)[3] <- "Video lectures"
+knitr::kable(p)
+```
 
 :::
+
+::: {.column width="50%"}
+  
+- **Second part in person**: 90-min meetings in room 4N (4th floor of "Psico 2" buidling - Via Venezia 12, Padova), 10:30-12:00 CEST
+
+```{r}
+knitr::kable(
+  data.frame(Week=6:10,
+           Date=c("Friday, Nov 06th",
+                  "Friday, Nov 13th",
+                  "Friday, Nov 20th",
+                  "Friday, Nov 27th",
+                  "Friday, Dec 4th"),
+           Activity=1:5))
+```
+  
+::: 
 
 ::::
 
-::: {.purple-block}
-
-- `r fa("laptop-code", height = "1em")` Create a data.frame with a column for students names (i.e., Jon, Jin, Jun) <br> and a column for grades (i.e., 10, 6, 8); then select the row corresponding to Jin.
+:::
 
 :::
 
-## How to load your data: set the work directory {.smaller}
+![](img/location.png){fig-align="right" width="200"}
 
-To read a file from a specific folder, you should first get or set the **working directory** (WD), that is the folder where input files are searched and where output files are saved.
+## Course material
 
-```{r }
-#| echo: true
-#| eval: false
-# prints the current WD
-getwd() 
+::: {.nonincremental}
 
-# changes WD to the 'data' subfolder
-setwd("data") 
+<br> 
 
-# set a new WD
-setwd("C:/Users/mengh/OneDrive/Desktop") # set new WD
-```
+Course material is available on Moodle: 
 
-- **Trick with RStudio**: when you start a new project (e.g., data analysis for the thesis, report), create a new **R project** (`.Rproj`) from the menu `File > New R Project` by selecting an existing folder or by creating a new one, which will be the default WD for any file related to that project <br> <br>
+<br>
 
-::: {.purple-block}
+> [psico.elearning.unipd.it/course/view.php?id=6998](https://psico.elearning.unipd.it/course/view.php?id=6998)
 
-- `r fa("laptop-code", height = "1em")` Get your WD; create a folder on your desktop and set it as your new WD
+<br> 
 
+- Slides and video lectures
+
+- Interactive activities on lecture contents
+
+- Research papers
+
+- Datasets and scripts
+
+- Additional materials
+
+:::
+
+## Optional textbooks
+
+::: {.nonincremental}
+::: {style="font-size: 0.9em;"}
+
+The course material (interactive video-lectures, slides, articles, datasets, and other educational resources) will be available in English on the course Moodle platform, covering all the main course contents.
+
+Yet the following **OPTIONAL** textbooks are recommended for those wishing to further explore the topics covered in the course:
+
+- Stern, Ray, & Karen (2001). *Psychophysiological Recording* (2nd edition), Oxford: Oxford University Press
+
+- Sazonov (2021). *Wearable Sensors: Fundamentals, Implementation and Applications* (2nd edition), London: Academic Press
+
+- Mehl & Conner (2012). *Handbook of Research Methods for Studying Daily Life*, New York: Guildford Press
+
+:::
+:::
+
+## Evaluation and assessment criteria
+
+::: {.nonincremental}
+::: {style="font-size: 0.9em;"}
+
+There is no final exam. The course is assessed on a pass/fail basis based on the assignments completed throughout the course and the practical group activities.
+
+Particular attention will be posed to the **group project** developed in the practical part and presented during the very last meeting. This will consist in designing a **wearable-based research protocol applied to user research**, where students will be required to demonstrate their ability to:
+
+- Design data acquisition protocols using wearable technologies
+
+- Pre-process and analyze biosignals using R
+
+- Critically interpret the obtained results
+
+- Effectively communicate results through reports and presentations
+
+The assessment will consider methodological and terminological correctness, quality of analysis, critical thinking, and clarity of presentation.
+
+:::
 :::
