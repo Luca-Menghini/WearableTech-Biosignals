@@ -116,7 +116,13 @@ Assistant Professor <br>
 
 ::::
 
-## About yourselfs
+::: {style="font-size: 22px;"}
+
+**Contacts:** <br> Forum: `Questions & Discussion` on Moodle <br> Email: luca.menghini@unipd.it
+
+:::
+
+## About you
 
 <br><br>
 
@@ -126,7 +132,7 @@ Please fill out the [Welcome Survey](https://unipadova.qualtrics.com/jfe/form/SV
 
 ::: {.nonincremental}
 
-20-hour (2 CFU) Small Group Activity in blended modality, <br> with a first theroretical part online (10 hours) <br> and a second practical part in person (10 hours):
+20-hour (2 CFU) Small Group Activity delivered in **blended format**, with a first part online (10h) and a second practical part in person (10h) <br> <br>
 
 ::: {style="font-size: 1.1em;"}
 
@@ -146,63 +152,74 @@ Practical sessions
 
 :::
 
-## Video lectures on theory, methods & applications
+## Part 1 (online): theory, methods, & applications
 
 ::: {.nonincremental}
 
-`r fa("heart-pulse", height = "1em", fill="#4657A9")` `What happens in the body?`
+`r fa("heart-pulse", height = "1em", fill="#4657A9")` `Psychophysiology of the stress response`
 
 ::: {style="font-size: 0.7em;"}
 
-  1. The Psychophysiology of Stress: From Stressful Exposures to the Autonomic Response
-  2. Stress, Cognitive Appraisals and Recovery
-  3. Physiological Markers of Stress and Recovery
+  1. The stress response and the autonomic nervous system
+  2. Stress, cognitive appraisals, and recovery
+  3. Physiological markers of stress and recovery
   
 :::
   
-`r fa("microchip", height = "1em", fill="#4657A9")` `How can we measure it?`
+`r fa("microchip", height = "1em", fill="#4657A9")` `Introduction to wearable technologies`
 
 ::: {style="font-size: 0.7em;"}
 
-  4. Wearable Technologies and Biosignals: An Introduction
-  5. ECG & PPG to measure Heart Rate and Heart Rate Variability
-  6. Electrodermal Activity and Skin Conductance
-  7. Accelerometry & Actigraphy to measure Physical Activity and Sleep
-  8. Can We Trust Wearable Sensors? Validity, Artefacts, Ethics and Privacy
+  4. Wearable tech and biosignals: An introduction
+  5. ECG & PPG for measuring heart rate and heart rate variability
+  6. Electrodermal activity and skin conductance
+  7. Accelerometry & actigraphy for measuring activity and sleep
+  8. Can we trust wearable sensors? Validity, artefacts, ethics, and privacy
 
 :::
 
-`r fa("magnifying-glass-chart", height = "1em", fill="#4657A9")` `What can we learn about technology users?` 
+`r fa("magnifying-glass-chart", height = "1em", fill="#4657A9")` `User studies and ambulatory monitoring` 
 
 ::: {style="font-size: 0.7em;"}
 
-  9. Wearables for User Studies: Human–Technology and Technology-Mediated Interaction
-  10. Wearables in the Wild: Ambulatory Assessment and e-Health
+  9. Wearables for user studies: Human–technology and technology-mediated interaction
+  10. Wearables in the wild: Ambulatory assessment and e-health
 
 :::
 :::
 
-## Practical sessions on cases studies, signal recording, pre-processing, & visualization
+## Part 2: hands-on activities & group project
 
 ::: {.nonincremental}
 
-The second part includes five in-person meetings <br> with practical activities in small groups:
+::: {style="font-size: 0.9em;"}
 
-1. Wearable demos, cases studies, and research questions
+Five **in-person** sessions with practical activities + group project:
 
-2. Research protocols and data recording
+1. `Wearable demos & project start` <br>
+Case study, research questions, constructs, signals & sensors
 
-3. Signal pre-processing in `r fa("r-project", height = "1em", fill="#4657A9")`
+2. `Study design & data recording` <br>
+Hands-on data acquisition + group study protocol
 
-4. From signals to user-study results in `r fa("r-project", height = "1em", fill="#4657A9")`
+3. `Signal pre-processing in` `r fa("r-project", height = "1em", fill="#4657A9")` <br>
+Hands-on data pre-processing + group pre-processing plan
 
-5. User study showcase
+4. `From signals to user-study results in` `r fa("r-project", height = "1em", fill="#4657A9")` <br>
+Data analysis and visualization + group analysis plan
+
+5. `User Study Showcase` <br>
+Group project presentations & peer feedback
+
+:::
+
+:::
 
 ::: {style="font-size: 0.7em;"}
 
-Participation to the in-person practical sessions is strongly recommended to to fulfill the requirements for the small group activity. You are free to use your own laptop or the computers available in the room (yes, we'll be in a computer room).
-
-:::
+Participation in the in-person practical sessions is expected, as most of the group project <br>
+and hands-on activities will be carried out during class. You are free to use your own laptop <br>
+or the computers available in the room (yes, we'll be in a computer room).
 
 :::
 
@@ -216,7 +233,7 @@ Participation to the in-person practical sessions is strongly recommended to to 
 
 ::: {.column width="50%"}
 
-- **First part online**: 20-min asynchronous video lectures with slides and interactive activities in Moodle
+- **First part (online)**: 10 video lectures with slides and interactive activities to be completed in Moodle
   
 ```{r}
 p <- data.frame(Week=1:5,
@@ -230,7 +247,7 @@ knitr::kable(p)
 
 ::: {.column width="50%"}
   
-- **Second part in person**: 90-min meetings in room 4N (4th floor of "Psico 2" buidling - Via Venezia 12, Padova), 10:30-12:00 CEST
+- **Second part (in person)**: 5 meetings in room 4N, "Psico 2" buidling, Via Venezia 12, Padova, 10:30-12:30 CEST
 
 ```{r}
 knitr::kable(
@@ -286,6 +303,8 @@ Course material is available on Moodle:
 
 The course material (interactive video-lectures, slides, articles, datasets, and other educational resources) will be available in English on the course Moodle platform, covering all the main course contents.
 
+<br>
+ 
 Yet the following **OPTIONAL** textbooks are recommended for those wishing to further explore the topics covered in the course:
 
 - Stern, Ray, & Karen (2001). *Psychophysiological Recording* (2nd edition), Oxford: Oxford University Press
@@ -300,21 +319,21 @@ Yet the following **OPTIONAL** textbooks are recommended for those wishing to fu
 ## Evaluation and assessment criteria
 
 ::: {.nonincremental}
-::: {style="font-size: 0.9em;"}
+::: {style="font-size: 0.85em;"}
 
-There is no final exam. The course is assessed on a pass/fail basis based on the assignments completed throughout the course and the practical group activities.
+There is no final exam. The course is assessed on a pass/fail basis based on the **assignments completed throughout the course**, including Moodle activities, hands-on data analysis exercises, and the **group project** developed during the practical sessions.
 
-Particular attention will be posed to the **group project** developed in the practical part and presented during the very last meeting. This will consist in designing a **wearable-based research protocol applied to user research**, where students will be required to demonstrate their ability to:
+The group project will consist of designing a **wearable-based user study**, from the formulation of research questions to the definition of the user study, data pre-processing strategy, and analysis and visualization plan. The projects will be presented during the final meeting.
+
+<br>
+
+Across the course activities, students will be required to demonstrate their ability to:
 
 - Design data acquisition protocols using wearable technologies
-
 - Pre-process and analyze biosignals using R
-
-- Critically interpret the obtained results
-
-- Effectively communicate results through reports and presentations
-
-The assessment will consider methodological and terminological correctness, quality of analysis, critical thinking, and clarity of presentation.
+- Critically interpret physiological and behavioural data
+- Plan appropriate data analyses and visualizations
+- Effectively communicate methodological choices and results
 
 :::
 :::
