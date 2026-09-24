@@ -127,7 +127,7 @@ Assistant Professor <br>
 
 <br><br>
 
-Please fill out the [Welcome Survey](https://unipadova.qualtrics.com/jfe/form/SV_2n275jqWjcN34i2) by Thursday, October 1st to help me better tailor the course contents to your background and goals. <br> It only takes 2 minutes!
+Please fill out the [Welcome Survey](https://unipadova.qualtrics.com/jfe/form/SV_2n275jqWjcN34i2) by Thursday, October 29th to help me better tailor the course contents to your background and goals. <br> It only takes 2 minutes!
 
 ## About the course
 
@@ -685,10 +685,14 @@ The robot can behave predictably or unexpectedly
 
 ## See you on Moodle!
 
+<br>
+
+> [psico.elearning.unipd.it/course/view.php?id=6998](https://psico.elearning.unipd.it/course/view.php?id=6998)
+
 <br> <br> **Contacts** 
 
-Forum: `Questions & Discussion` on Moodle 
+Forum: `Questions & Discussion`
 
-Email: `luca.menghini@unipd.it`
+Email: luca.menghini@unipd.it
 
 Office hours: Wednesday 15:30 - 17:30 (link on Moodle)
