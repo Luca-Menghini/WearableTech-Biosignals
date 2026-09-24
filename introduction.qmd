@@ -1,12 +1,13 @@
 ---
-title: "Wearable Technologies &<br> Biosignals for User Studies"
-subtitle: 'Introduction to the course'
+title: "Wearable technologies and<br> biosignals for user studies<br> [PS0000022]"
+subtitle: 'Introduction'
 author:
   name: "<b>Luca Menghini, Ph.D.</b>"
   url:  "https://scholar.google.it/citations?user=ZFRn4ssAAAAJ&hl=it&oi=ao"
   affiliations:
-      - name: "<br>***<br>Small group activity"
-      - name: "<span style='color: #666666; font-weight: normal; margin-top: 15px; display: block;'>Master degree in Cognitive Science for Human-Centric Technologies<br>Department of General Psychology, University of Padova</span>"
+      - name: "<span style='color: #666666; font-weight: normal; margin-top: 15px; display: block;'>***<br>Master degree in <br>COGNITIVE SCIENCE FOR HUMAN-CENTRIC
+TECHNOLOGIES<br>University of Padova</span>"
+      - name: "<span style='color: #4657A9'><br><br>**TAP THE RIGHT ARROW (→) TO NAVIGATE**</span>"
 
 format:
   revealjs:
@@ -47,7 +48,9 @@ rm(list = ls())
 library(fontawesome)
 ```
 
-## About myself
+# Course structure and contents
+
+## About the teacher
 
 :::: {.columns}
 ::: {.column width="27%"}
@@ -61,10 +64,6 @@ Assistant Professor <br>
 [University of Padova, Italy]{style="font-size: 18px;"}
 
 ![](img/logos.JPG){width="270px"}
-
-```{r , echo = FALSE, out.width = "270px",fig.align="center"}
-# knitr::include_graphics("img/logos.JPG")
-```
   
 :::
 :::
@@ -104,11 +103,13 @@ Assistant Professor <br>
 :::{.r-stack}
 ![](img/paper_e4.JPG){.absolute top=0 right=0 width="400"}
 
-![](img/paper_esm.JPG){.absolute top=170 right=0 width="300"}
+![](img/paper_sleeptrackers.png){.absolute top=170 right=0 width="300"}
 
-![](img/paper_tutorial.JPG){.absolute top=270 right=0 width="300"}
+![](img/paper_stateofscience.png){.absolute top=290 right=0 width="320"}
 
 ![](img/paper_bp.JPG){.absolute top=375 right=0 width="400"}
+
+![](img/paper_dare2wear.png){.absolute top=520 right=0 width="300"}
 
 :::
 
@@ -118,7 +119,7 @@ Assistant Professor <br>
 
 ::: {style="font-size: 22px;"}
 
-**Contacts:** <br> Forum: `Questions & Discussion` on Moodle <br> Email: luca.menghini@unipd.it
+**Contacts** <br> Forum: `Questions & Discussion` on Moodle <br> Email: `luca.menghini@unipd.it`<br>Office hours: Wednesday 15:30 - 17:30 (link on Moodle)
 
 :::
 
@@ -128,31 +129,38 @@ Assistant Professor <br>
 
 Please fill out the [Welcome Survey](https://unipadova.qualtrics.com/jfe/form/SV_2n275jqWjcN34i2) by Thursday, October 1st to help me better tailor the course contents to your background and goals. <br> It only takes 2 minutes!
 
-## Course outline
+## About the course
 
 ::: {.nonincremental}
 
-20-hour (2 CFU) Small Group Activity delivered in **blended format**, with a first part online (10h) and a second practical part in person (10h) <br> <br>
+20-hour (2 ECTS) Small Group Activity delivered in **blended format** <br>
+💻 Part 1 online (10h) + 🏫 Part 2 in person (10h) <br> <br>
 
 ::: {style="font-size: 1.1em;"}
 
-- `r fa("heart-pulse", height = "1em", fill="#4657A9")` `What happens in the body?` <br>
+`1.1.` `r fa("heart-pulse", height = "1em", fill="#4657A9")` `What happens in the body?` <br>
 Psychophysiology of the stress response <br>
 
-- `r fa("microchip", height = "1em", fill="#4657A9")` `How can we measure it?`  <br>
+`1.2.` `r fa("microchip", height = "1em", fill="#4657A9")` `How can we measure it?`  <br>
 Introduction to wearable tech <br>
 
-- `r fa("magnifying-glass-chart", height = "1em", fill="#4657A9")` `What can we learn about technology users?` <br>
+`1.3.` `r fa("magnifying-glass-chart", height = "1em", fill="#4657A9")` `What can we learn about technology users?` <br>
 User studies & ambulatory monitoring <br> <br>
 
-- `r fa("laptop-code", height = "1em", fill="#4657A9")` `Hands on wearables and biosignals` <br>
-Practical sessions
+`2.` `r fa("laptop-code", height = "1em", fill="#4657A9")` `Hands on wearables and biosignals` <br>
+Practical activities & group project
 
 :::
 
 :::
 
-## Part 1 (online): theory, methods, & applications
+## 💻 Part 1: theory, methods, & applications
+
+::: {style="font-size: 0.9em;"}
+
+1 live session + 9 online lectures with interactive activities on Moodle
+
+:::
 
 ::: {.nonincremental}
 
@@ -162,7 +170,7 @@ Practical sessions
 
   1. The stress response and the autonomic nervous system
   2. Stress, cognitive appraisals, and recovery
-  3. Physiological markers of stress and recovery
+  3. Biosignals of stress and recovery
   
 :::
   
@@ -170,9 +178,9 @@ Practical sessions
 
 ::: {style="font-size: 0.7em;"}
 
-  4. Wearable tech and biosignals: An introduction
-  5. ECG & PPG for measuring heart rate and heart rate variability
-  6. Electrodermal activity and skin conductance
+  4. Wearable Technologies: Principles, Types and Applications
+  5. ECG & PPG for measuring heart rate and HRV
+  6. Electrodermal activity
   7. Accelerometry & actigraphy for measuring activity and sleep
   8. Can we trust wearable sensors? Validity, artefacts, ethics, and privacy
 
@@ -182,19 +190,18 @@ Practical sessions
 
 ::: {style="font-size: 0.7em;"}
 
-  9. Wearables for user studies: Human–technology and technology-mediated interaction
-  10. Wearables in the wild: Ambulatory assessment and e-health
+  9. Wearables for user studies and Ambulatory assessment
 
 :::
 :::
 
-## Part 2: hands-on activities & group project
+## 🏫 Part 2: hands-on activities & group project
 
 ::: {.nonincremental}
 
 ::: {style="font-size: 0.9em;"}
 
-Five **in-person** sessions with practical activities + group project:
+5 in-person sessions with practical activities + group project
 
 1. `Wearable demos & project start` <br>
 Case study, research questions, constructs, signals & sensors
@@ -218,12 +225,11 @@ Group project presentations & peer feedback
 ::: {style="font-size: 0.7em;"}
 
 Participation in the in-person practical sessions is expected, as most of the group project <br>
-and hands-on activities will be carried out during class. You are free to use your own laptop <br>
-or the computers available in the room (yes, we'll be in a computer room).
+and hands-on activities will be carried out during class. <br> You are free to use your own laptop or the computers available in the room.
 
 :::
 
-## Course program: Dates and places
+## Course program
 
 ::: {.nonincremental}
 
@@ -233,32 +239,37 @@ or the computers available in the room (yes, we'll be in a computer room).
 
 ::: {.column width="50%"}
 
-- **First part (online)**: 10 video lectures with slides and interactive activities to be completed in Moodle
+💻 **Part 1 (online)**: 9 video lectures with slides and interactive activities to be completed on Moodle
   
 ```{r}
-p <- data.frame(Week=1:5,
-           Date=c("Sept 28th","Oct 5th","Oct 12th","Oct 19th","Oct 26th"),
-           vl=c("1-2","3-4","5-6","7-8","9-10"))
+p <- data.frame(Week=1:4,
+           Date=c("October 28-30","November 2-6",
+                  "November 9-13","November 16-20"),
+           vl=c("1-3","4-5","6-7","8-9"))
 colnames(p)[3] <- "Video lectures"
 knitr::kable(p)
 ```
+
+LIVE🔴 **Synchronous session (online)**<br>October 30, 10:30 CEST, link on Moodle
 
 :::
 
 ::: {.column width="50%"}
   
-- **Second part (in person)**: 5 meetings in room 4N, "Psico 2" buidling, Via Venezia 12, Padova, 10:30-12:30 CEST
+🏫 **Part 2 (in person)**: 5 meetings in room 4N, "Psico 2" buidling, Via Venezia 12, Padova, 10:30-12:30 CEST
 
 ```{r}
 knitr::kable(
-  data.frame(Week=6:10,
-           Date=c("Friday, Nov 06th",
-                  "Friday, Nov 13th",
-                  "Friday, Nov 20th",
-                  "Friday, Nov 27th",
-                  "Friday, Dec 4th"),
+  data.frame(Week=5:9,
+           Date=c("Friday, November 20",
+                  "Friday, November 27",
+                  "Friday, December 4",
+                  "Friday, December 11",
+                  "Friday, December 18"),
            Activity=1:5))
 ```
+  
+![](img/location.png){width="500"}
   
 ::: 
 
@@ -268,7 +279,7 @@ knitr::kable(
 
 :::
 
-![](img/location.png){fig-align="right" width="200"}
+
 
 ## Course material
 
@@ -277,8 +288,6 @@ knitr::kable(
 <br> 
 
 Course material is available on Moodle: 
-
-<br>
 
 > [psico.elearning.unipd.it/course/view.php?id=6998](https://psico.elearning.unipd.it/course/view.php?id=6998)
 
@@ -316,6 +325,28 @@ Yet the following **OPTIONAL** textbooks are recommended for those wishing to fu
 :::
 :::
 
+## Target skills and knowledge
+
+::: {.nonincremental}
+
+<br>
+
+::: {.column width="70%"}
+
+1. `r fa("book", height = "1em",fill="#4657A9")` Understand the stress response and related cognitive constructs <br>
+
+2. `r fa("microchip", height = "1em",fill="#4657A9")` Know and critically evaluate the main types of wearable sensors and associated biosignals <br>
+
+3. `r fa("mobile-screen", height = "1em",fill="#4657A9")` Analyze and critically evaluate applications of wearable tech in user studies <br>
+
+4. `r fa("compass-drafting", height = "1em",fill="#4657A9")` Design and implement user study protocols using wearable technologies <br>
+
+5. `r fa("magnifying-glass-chart", height = "1em",fill="#4657A9")` Apply pre-processing, visualization, and analysis techniques to biosignals
+
+:::
+
+:::
+
 ## Evaluation and assessment criteria
 
 ::: {.nonincremental}
@@ -337,3 +368,327 @@ Across the course activities, students will be required to demonstrate their abi
 
 :::
 :::
+
+# Introduction
+
+## Wearable tech & biosignals
+
+```{r}
+#| echo: false
+#| out-width: "290px"
+#| fig-align: center
+knitr::include_graphics("img/wearable.PNG")
+```
+
+::: {style="font-size: 0.5em;"}
+Adapted from de Zambotti, M., Cellini, N., Menghini, L., Sarlo, M., & Baker, F. C. (2020).
+Sensors capabilities, performance,<br>and use of consumer sleep technology.
+Sleep medicine clinics, 15(1), 1-30. [https://doi.org/10.1016/j.jsmc.2019.11.003]()
+:::
+
+## Wearable tech & biosignals
+
+<br>
+
+Let's see some examples
+
+LIVE🔴
+
+## Wearable tech & biosignals *for user studies*
+
+::: {.nonincremental}
+
+A **wearable-based user study** uses body-worn sensors to collect physiological and behavioural data while people interact with technologies, systems, or other people through technology
+
+::: {.column width="50%"}
+
+- **User interaction**  
+
+- **Psychological construct**  
+
+- **Biosignal / behaviour** 
+
+- **Interpretation in context**
+
+:::
+
+::: {.column width="50%"}
+
+![](img/wearable-VR.png){width="500px"}
+
+:::
+
+:::
+
+The goal is not to “detect stress”, but to understand <br> how users respond to an interaction
+
+## Two broad families of user studies
+
+<br>
+
+::: {.nonincremental}
+::: {.columns}
+::: {.column width="50%"}
+
+
+### 👤📱<br>Human–Tech Interaction
+
+The user interacts directly with a technological system:
+
+- using a mobile app 
+- navigation alert 
+- interacting with a chatbot 
+- working with a cobot 
+- using a VR environment 
+
+:::
+::: {.column width="50%"}
+
+### 👤📱👤<br>Tech-Mediated Interaction
+
+Technology mediates interaction between people:
+
+- remote collaboration 
+- video calls 
+- expert–novice interaction 
+- online teamwork 
+- *e*-learning 
+
+:::
+:::
+:::
+
+## What psychophysiological data can add
+
+::: {.nonincremental}
+
+They can help us study aspects of user experience that are difficult to capture with self-report and behavioral data alone:
+
+::: {.column width="50%"}
+
+- Arousal and activation
+- Effort and workload
+- Recovery after the interaction
+- Task-related temporal dynamics
+- Individual differences in <br>response patterns
+
+:::
+
+::: {.column width="50%"}
+
+![](img/user-stress.png){width="500px"}
+
+:::
+
+**But physiological data are meaningful only when interpreted together with task features, behaviour, and subjective experience**
+
+:::
+
+## Common misconceptions
+
+<br>
+
+::: {style="font-size: 0.8em;"}
+
+> *A wearable can measure stress directly*
+
+**No.** Wearables record biosignals, not psychological constructs
+
+<br>
+
+> *If heart rate increases, the user is stressed*
+
+**Not necessarily.** Heart rate may increase because of movement,<br>posture, caffeine, or many other **confounding factors**
+
+<br>
+
+> *More biosignals and indices means better interpretation*
+
+**Not necessarily.** Poorly contextualized biosignals can easily lead to<br>overinterpretation and cherry picking 🍒
+
+:::
+
+## From biosignals to interpretation
+
+![](img/wearable-user.png){width="500px"}
+
+::: {.nonincremental}
+
+Wearable-based user studies requires a clear chain of reasoning:
+
+- 👤 **What is the user doing?**
+
+- 💡 **What construct are we interested in?**  
+
+- ⚡ **Which biosignals could reflect relevant processes?**  
+
+- ⌚ **Which sensor can measure it in this context?** 
+
+- 💥 **What could confound the interpretation?**
+
+:::
+
+## Interactive activity on Wooclap
+
+::: {.column width="29%"}
+
+![](img/wooclap1.png){width="200px"}
+
+::: {style="font-size: 0.6em;"}
+
+Anonymous answer (max 1 word)<br>on [wooclap.com](https://wooclap.com)
+
+:::
+
+::: {style="font-size: 0.9em;"}
+
+code: KIKBUCP
+
+:::
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="66%"}
+
+::: {.nonincremental}
+
+For each of the following scenarios, discuss:
+
+1. 💡 **What construct would you study?**
+2. ⚡ **What biosignal might be useful?**
+3. ⌚ **What wearable device could you use?**
+4. 💥 **What could confound the interpretation?**
+
+:::
+
+:::
+
+::: {.column width="90%"}
+
+<br>
+
+### Scenario 1 - Health chatbot 🤖💬 
+
+A user interacts with a chatbot that asks questions about health behaviours and gives personalised feedback
+
+Some questions are neutral, others more sensitive
+
+:::
+
+## Interactive activity on Wooclap
+
+::: {.column width="29%"}
+
+![](img/wooclap1.png){width="200px"}
+
+::: {style="font-size: 0.6em;"}
+
+Anonymous answer (max 1 word)<br>on [wooclap.com](https://wooclap.com)
+
+:::
+
+::: {style="font-size: 0.9em;"}
+
+code: KIKBUCP
+
+:::
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="66%"}
+
+::: {.nonincremental}
+
+For each of the following scenarios, discuss:
+
+1. 💡 **What construct would you study?**
+2. ⚡ **What biosignal might be useful?**
+3. ⌚ **What wearable device could you use?**
+4. 💥 **What could confound the interpretation?**
+
+:::
+
+:::
+
+::: {.column width="90%"}
+
+<br>
+
+### Scenario 2 - Videoconference task 👤💻👤  
+
+A group of students completes a collaborative task in videoconference
+
+Condition A: Camera on; Condition B: Camera off
+
+:::
+
+## Interactive activity on Wooclap 
+
+::: {.column width="29%"}
+
+![](img/wooclap1.png){width="200px"}
+
+::: {style="font-size: 0.6em;"}
+
+Anonymous answer (max 1 word)<br>on [wooclap.com](https://wooclap.com)
+
+:::
+
+::: {style="font-size: 0.9em;"}
+
+code: KIKBUCP
+
+:::
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="66%"}
+
+::: {.nonincremental}
+
+For each of the following scenarios, discuss:
+
+1. 💡 **What construct would you study?**
+2. ⚡ **What biosignal might be useful?**
+3. ⌚ **What wearable device could you use?**
+4. 💥 **What could confound the interpretation?**
+
+:::
+
+:::
+
+::: {.column width="90%"}
+
+<br>
+
+### Scenario 3 - Human–cobot collaboration 👤🦾 
+
+A user performs a manual task while a collaborative robot helps with part of the procedure
+
+The robot can behave predictably or unexpectedly
+
+:::
+
+## Any question?
+
+## See you on Moodle!
+
+<br> <br> **Contacts** 
+
+Forum: `Questions & Discussion` on Moodle 
+
+Email: `luca.menghini@unipd.it`
+
+Office hours: Wednesday 15:30 - 17:30 (link on Moodle)
