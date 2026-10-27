@@ -139,13 +139,10 @@ Please fill out the [Welcome Survey](https://unipadova.qualtrics.com/jfe/form/SV
 ::: {style="font-size: 1.1em;"}
 
 `1.1.` `r fa("heart-pulse", height = "1em", fill="#4657A9")` `What happens in the body?` <br>
-Psychophysiology of the stress response <br>
+Stress responses and biosignals in user studies <br>
 
 `1.2.` `r fa("microchip", height = "1em", fill="#4657A9")` `How can we measure it?`  <br>
-Introduction to wearable tech <br>
-
-`1.3.` `r fa("magnifying-glass-chart", height = "1em", fill="#4657A9")` `What can we learn about technology users?` <br>
-User studies & ambulatory monitoring <br> <br>
+Introduction to wearable tech <br><br>
 
 `2.` `r fa("laptop-code", height = "1em", fill="#4657A9")` `Hands on wearables and biosignals` <br>
 Practical activities & group project
@@ -164,19 +161,19 @@ Practical activities & group project
 
 ::: {.nonincremental}
 
-`r fa("heart-pulse", height = "1em", fill="#4657A9")` `Psychophysiology of the stress response`
+`r fa("heart-pulse", height = "1em", fill="#4657A9")` `Stress responses and biosignals in user studies`
 
-::: {style="font-size: 0.7em;"}
+::: {style="font-size: 0.9em;"}
 
   1. The stress response and the autonomic nervous system
   2. Stress, cognitive appraisals, and recovery
-  3. Biosignals of stress and recovery
+  3. Biosignals and biomarkers of stress and recovery
   
 :::
   
 `r fa("microchip", height = "1em", fill="#4657A9")` `Introduction to wearable technologies`
 
-::: {style="font-size: 0.7em;"}
+::: {style="font-size: 0.9em;"}
 
   4. Wearable Technologies: Principles, Types and Applications
   5. ECG & PPG for measuring heart rate and HRV
@@ -186,13 +183,6 @@ Practical activities & group project
 
 :::
 
-`r fa("magnifying-glass-chart", height = "1em", fill="#4657A9")` `User studies and ambulatory monitoring` 
-
-::: {style="font-size: 0.7em;"}
-
-  9. Wearables for user studies and Ambulatory assessment
-
-:::
 :::
 
 ## 🏫 Part 2: hands-on activities & group project
@@ -245,7 +235,7 @@ and hands-on activities will be carried out during class. <br> You are free to u
 p <- data.frame(Week=1:4,
            Date=c("October 28-30","November 2-6",
                   "November 9-13","November 16-20"),
-           vl=c("1-3","4-5","6-7","8-9"))
+           vl=c("1-2","3-4","5-6","7-8"))
 colnames(p)[3] <- "Video lectures"
 knitr::kable(p)
 ```
