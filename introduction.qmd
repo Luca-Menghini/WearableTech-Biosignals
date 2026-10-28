@@ -229,7 +229,7 @@ and hands-on activities will be carried out during class. <br> You are free to u
 
 ::: {.column width="50%"}
 
-💻 **Part 1 (online)**: 9 video lectures with slides and interactive activities to be completed on Moodle
+💻 **Part 1 (online)**: 8 video lectures with slides and interactive activities to be completed on Moodle
   
 ```{r}
 p <- data.frame(Week=1:4,
