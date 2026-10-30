@@ -125,16 +125,395 @@ Assistant Professor <br>
 
 ## About you
 
-<br><br>
+```{r}
+ws <- read.csv("data/welcome-survey.csv")
+ws <- ws[3:nrow(ws),]
+ws <- ws[ws$Progress=="100",]
+ws <- ws[,20:ncol(ws)]
+ws$position[ws$position_7_TEXT==
+              "Triennale in Psychology obtained. I'm now pursuing a Triennale in Computer Science."] <- "🧠 Psychology & Cognitive Neuroscience"
+ws$position[ws$position_7_TEXT=="cognitive science"] <-
+  "🧠 Psychology & Cognitive Neuroscience"
+ws$position[ws$position_7_TEXT %in% c(
+  "I have a bachelor's in Data Analytics","Mathematics and Data Science")
+  ] <- "💻 Data Science & maths"
+ws$position[ws$position_7_TEXT==
+              "Linguistics"] <- "🔡 Linguistics"
+ws$position_7_TEXT <- NULL
+ws$warables.worn_1_TEXT[
+  ws$warables.worn_1_TEXT==
+    "Polar H10 (chest heart rate sensor) + consumer smartwatch"] <- "Polar H10"
+```
 
-Please fill out the [Welcome Survey](https://unipadova.qualtrics.com/jfe/form/SV_2n275jqWjcN34i2) by Thursday, October 29th to help me better tailor the course contents to your background and goals. <br> It only takes 2 minutes!
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 15.5
+#| fig-height: 8.5
+#| out-width: "100%"
+#| dev: ragg_png
+
+library(tidyverse)
+library(patchwork)
+library(stringr)
+library(forcats)
+
+# --------------------------------------------------
+# 1. CLEAN DATA
+# --------------------------------------------------
+
+df_plot <- ws %>%
+  filter(
+    !is.na(wearables),
+    wearables != "",
+    !str_detect(wearables, "ImportId"),
+    !str_detect(wearables, "Wearables and biosignals")
+  ) %>%
+  mutate(
+
+    # Background
+    background = case_when(
+      str_detect(position, "Psychology") ~ "🧠 Psychology /\nCog Neuro",
+      str_detect(position, "Computer|Engineering|Data") ~ "💻 Engineering /\nCS / Data",
+      str_detect(position, "Other|Multidisciplinary") ~ "🔀 Multidisciplinary /\nother",
+      TRUE ~ "🔀 Multidisciplinary /\nother"
+    ),
+    background = factor(
+      background,
+      levels = c(
+        "🧠 Psychology /\nCog Neuro",
+        "💻 Engineering /\nCS / Data",
+        "🔀 Multidisciplinary /\nother"
+      )
+    ),
+
+    # Wearable experience
+    wearable_exp = case_when(
+      str_detect(wearables, "Curious Spectator") ~ "🕵️ Curious\nspectator",
+      str_detect(wearables, "Casual User") ~ "⌚ Casual user /\nenthusiast",
+      str_detect(wearables, "Hands-on Explorer") ~ "🧪 Hands-on\nexplorer",
+      TRUE ~ "Other"
+    ),
+    wearable_exp = factor(
+      wearable_exp,
+      levels = c(
+        "🕵️ Curious\nspectator",
+        "⌚ Casual user /\nenthusiast",
+        "🧪 Hands-on\nexplorer"
+      )
+    ),
+
+    # Current wearable use
+    wearable_now = case_when(
+      str_detect(warables.worn, "^No") ~ "No",
+      str_detect(warables.worn, "^Yes") &
+        !is.na(warables.worn_1_TEXT) &
+        warables.worn_1_TEXT != "" ~ warables.worn_1_TEXT,
+      str_detect(warables.worn, "^Yes") ~ "Yes, unspecified",
+      TRUE ~ NA_character_
+    ),
+
+    # Psychophysiology / biosignals background
+    biosignal_exp = case_when(
+      str_detect(biosignals, "Psycho-what") ~ "🤷 Psycho-what?",
+      str_detect(biosignals, "Textbook Level") ~ "📚 Textbook\nlevel",
+      str_detect(biosignals, "Applied / UX Interest") ~ "🥼 Applied /\nUX interest",
+      TRUE ~ "Other"
+    ),
+    biosignal_exp = factor(
+      biosignal_exp,
+      levels = c(
+        "🤷 Psycho-what?",
+        "📚 Textbook\nlevel",
+        "🥼 Applied /\nUX interest"
+      )
+    ),
+
+    # Relationship with data analysis
+    data_exp = case_when(
+      str_detect(data.analysis, "complicated|Complicated") ~ "💔 It's\ncomplicated",
+      str_detect(data.analysis, "Good friends") ~ "🤝 Good\nfriends",
+      str_detect(data.analysis, "serious relationship") ~ "🔥 Serious\nrelationship",
+      TRUE ~ "Other"
+    ),
+    data_exp = factor(
+      data_exp,
+      levels = c(
+        "💔 It's\ncomplicated",
+        "🤝 Good\nfriends",
+        "🔥 Serious\nrelationship"
+      )
+    ),
+
+    # R experience
+    r_exp_short = case_when(
+      str_detect(R_exp, "R... who") ~ "🟩 R... who?",
+      str_detect(R_exp, "Copy-Paste Warrior") ~ "🟨 Copy-paste\nwarrior",
+      str_detect(R_exp, "Comfortable-ish") ~ "🟧 Comfortable-\nish",
+      str_detect(R_exp, "Wizard") ~ "🟪 R wizard",
+      TRUE ~ "Other"
+    ),
+    r_exp_short = factor(
+      r_exp_short,
+      levels = c(
+        "🟩 R... who?",
+        "🟨 Copy-paste\nwarrior",
+        "🟧 Comfortable-\nish",
+        "🟪 R wizard"
+      )
+    ),
+
+    # Expected attendance
+    attendance = case_when(
+      str_detect(attending, "Yes, count me in") ~ "All sessions",
+      str_detect(attending, "Mostly yes") ~ "Most sessions",
+      str_detect(attending, "Unsure") ~ "Unsure",
+      TRUE ~ "Other"
+    ),
+    attendance = factor(
+      attendance,
+      levels = c(
+        "All sessions",
+        "Most sessions",
+        "Unsure"
+      )
+    )
+  )
+
+# --------------------------------------------------
+# 2. OTHER SOFTWARE
+# --------------------------------------------------
+
+software_df <- df_plot %>%
+  separate_rows(other_software, sep = ",") %>%
+  mutate(
+    software = str_trim(other_software),
+    software = recode(
+      software,
+      "Jamovi" = "jamovi"
+    )
+  ) %>%
+  filter(
+    !is.na(software),
+    software != "",
+    software != "NA",
+    software != "Other (specify)",
+    software %in% c(
+      "SPSS",
+      "Excel",
+      "Python",
+      "Matlab",
+      "JASP",
+      "jamovi",
+      "PowerBI",
+      "None"
+    )
+  ) %>%
+  count(software, sort = TRUE)
+
+# --------------------------------------------------
+# 3. PLOT STYLE
+# --------------------------------------------------
+
+main_col <- "#4657A9"
+
+my_theme <- theme_minimal(base_size = 16) +
+  theme(
+    plot.title = element_text(
+      face = "bold",
+      size = 15,
+      colour = main_col,
+      lineheight = .95
+    ),
+
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_line(
+      colour = "grey88",
+      linewidth = 0.35
+    ),
+
+    axis.text.x = element_text(
+      size = 10.5,
+      colour = "grey35"
+    ),
+
+    axis.text.y = element_text(
+      size = 12,
+      colour = "grey20",
+      lineheight = .95
+    ),
+
+    plot.margin = margin(
+      2, 8, 2, 2
+    )
+  )
+
+# --------------------------------------------------
+# 4. FUNCTION FOR STANDARD BAR PLOTS
+# --------------------------------------------------
+
+make_bar <- function(data, var, title) {
+
+  data %>%
+    filter(
+      !is.na({{ var }}),
+      {{ var }} != "Other"
+    ) %>%
+    count({{ var }}) %>%
+    ggplot(
+      aes(
+        x = n,
+        y = fct_rev({{ var }})
+      )
+    ) +
+    geom_col(
+      fill = main_col,
+      alpha = 0.82
+    ) +
+    geom_text(
+      aes(label = n),
+      hjust = -0.18,
+      size = 4.2,
+      colour = "grey20"
+    ) +
+    scale_x_continuous(
+      breaks = scales::pretty_breaks(),
+      expand = expansion(
+        mult = c(0, .16)
+      )
+    ) +
+    labs(title = title) +
+    my_theme
+}
+
+# --------------------------------------------------
+# 5. INDIVIDUAL PLOTS
+# --------------------------------------------------
+
+p1 <- make_bar(
+  df_plot,
+  background,
+  "Background"
+)
+
+p2 <- make_bar(
+  df_plot,
+  wearable_exp,
+  "Wearable\nexperience"
+)
+
+p3 <- make_bar(
+  df_plot,
+  wearable_now,
+  "Currently using\na wearable"
+)
+
+p4 <- make_bar(
+  df_plot,
+  biosignal_exp,
+  "Psychophysiology /\nbiosignals"
+)
+
+p5 <- make_bar(
+  df_plot,
+  data_exp,
+  "Relationship with\ndata analysis"
+)
+
+p6 <- make_bar(
+  df_plot,
+  r_exp_short,
+  "R experience"
+)
+
+p7 <- software_df %>%
+  ggplot(
+    aes(
+      x = n,
+      y = fct_rev(fct_reorder(software, n))
+    )
+  ) +
+  geom_col(
+    fill = main_col,
+    alpha = 0.82
+  ) +
+  geom_text(
+    aes(label = n),
+    hjust = -0.18,
+    size = 4.2,
+    colour = "grey20"
+  ) +
+  scale_x_continuous(
+    breaks = scales::pretty_breaks(),
+    expand = expansion(
+      mult = c(0, .16)
+    )
+  ) +
+  labs(
+    title = "Other software"
+  ) +
+  my_theme
+
+p8 <- make_bar(
+  df_plot,
+  attendance,
+  "Expected\nattendance"
+)
+
+# --------------------------------------------------
+# 6. COMBINE
+# --------------------------------------------------
+
+(p1 | p2 | p3 | p4) /
+(p5 | p6 | p7 | p8) +
+  plot_annotation(
+    caption = paste0(
+      "n = ",
+      nrow(df_plot),
+      " responses"
+    ),
+    theme = theme(
+      plot.caption = element_text(
+        size = 14,
+        colour = "grey45",
+        hjust = 0
+      ),
+      plot.caption.position = "plot"
+    )
+  )
+```
+
+
+## About your expectations
+
+(OPTIONAL) Is there anything specific you absolutely hope to take away from this small group activity?
+
+::: {style="font-size: 0.6em;"}
+```{r}
+#| echo: false
+#| results: asis
+
+exp_clean <- df_plot %>%
+  filter(!is.na(expectations), expectations != "") %>%
+  pull(expectations)
+
+cat(paste0("> ", exp_clean, collapse = "\n\n"))
+```
+
+:::
 
 ## About the course
 
 ::: {.nonincremental}
 
-20-hour (2 ECTS) Small Group Activity delivered in **blended format** <br>
-💻 Part 1 online (10h) + 🏫 Part 2 in person (10h) <br> <br>
+20-hour (2 ECTS) Small Group Activity delivered in **blended format** <br> <br>
+
+💻 **Part 1 online (10h)**
 
 ::: {style="font-size: 1.1em;"}
 
@@ -143,6 +522,12 @@ Stress responses and biosignals in user studies <br>
 
 `1.2.` `r fa("microchip", height = "1em", fill="#4657A9")` `How can we measure it?`  <br>
 Introduction to wearable tech <br><br>
+
+:::
+
+🏫 **Part 2 in person (10h)**
+
+::: {style="font-size: 1.1em;"}
 
 `2.` `r fa("laptop-code", height = "1em", fill="#4657A9")` `Hands on wearables and biosignals` <br>
 Practical activities & group project
