@@ -1,0 +1,456 @@
+---
+title: "Wearable technologies and<br> biosignals for user studies<br> [PS0000022]"
+subtitle: 'Practical session #1'
+author:
+  name: "<b>Luca Menghini, Ph.D.</b>"
+  url:  "https://scholar.google.it/citations?user=ZFRn4ssAAAAJ&hl=it&oi=ao"
+  affiliations:
+      - name: "<span style='color: #666666; font-weight: normal; margin-top: 15px; display: block;'>***<br>Master degree in <br>COGNITIVE SCIENCE FOR HUMAN-CENTRIC
+TECHNOLOGIES<br>University of Padova</span>"
+      - name: "<span style='color: #4657A9'><br><br>**TAP THE RIGHT ARROW (→) TO NAVIGATE**</span>"
+
+format:
+  revealjs:
+    self-contained: true
+    theme: mytheme.scss
+    logo: "img/logo.png"
+    transition: none
+    transition-speed: slow
+    background-transition: fade
+    slide-number: c/t
+    show-slide-number: all
+    incremental: true
+
+include-in-header:
+  - text: |
+      <style>
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .reveal .fragment {
+        color: var(--r-main-color);
+      }
+      .reveal .slide-logo {
+        height: 80px !important; 
+        max-height: unset !important;
+        max-width: unset !important;
+      }
+      </style>
+
+fig-align: center
+---
+
+```{r}
+#| echo: false
+rm(list = ls())
+library(fontawesome)
+```
+
+# Practical session 1
+
+## Today
+
+::: {.nonincremental}
+
+::: {style="font-size: 1.05em;"}
+
+<br>
+
+**10:30–10:40**  🧭 Where we are going 
+
+<br>
+
+**10:40–11:15**  ⌚ Wearable technology showcase  
+
+<br>
+
+**11:15–11:45**  👤👤👤 Group project: case study → research plan
+
+<br>
+
+**11:45–11:57**  📢 60–90 second pitches 
+
+<br>
+
+**11:57–12:00**  ✅ Wrap-up  
+:::
+
+:::
+
+## From online lectures to hands-on work
+
+::: {.nonincremental}
+
+You have already seen the main building blocks:
+
+→ 👤 User / interaction 
+
+→ 💡 Construct 
+
+→ ⚡ Biosignal 
+
+→ ⌚ Sensor 
+
+→ 📈 Features 
+
+→ 🔎 Inference
+
+<br>
+
+:::
+
+::: {.incremental}
+
+During the practical sessions, we will **build on this chain** while deepening more technical aspects concerning signal pre-processing, data visualization, and data analysis.
+
+:::
+
+## The five practical sessions
+
+::: {style="font-size: 0.9em;"}
+
+5 in-person sessions with practical activities + group project
+
+1. `Wearable demos & project start` <br>
+Case study, research questions, constructs, signals & sensors
+
+2. `Study design & data recording` <br>
+Hands-on data acquisition + group study protocol
+
+3. `Signal pre-processing in` `r fa("r-project", height = "1em", fill="#4657A9")` <br>
+Hands-on data pre-processing + group pre-processing plan
+
+4. `From signals to user-study results in` `r fa("r-project", height = "1em", fill="#4657A9")` <br>
+Data analysis and visualization + group analysis plan
+
+5. `User Study Showcase` <br>
+Group project presentations & peer feedback
+
+:::
+
+::: {style="font-size: 0.7em;"}
+
+- Participation in the in-person practical sessions is expected, as most of the group project <br>
+and hands-on activities will be carried out during class. <br> You are free to use your own laptop or the computers available in the room.
+
+:::
+
+# Part 1 — Wearable showcase
+
+## What is on the table today?
+
+::: {.nonincremental}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+⌚ **Empatica EmbracePlus**  
+PPG · EDA · acceleration · temperature
+
+⌚ **Empatica E4**  
+A previous-generation research wearable
+
+❤️ **Polar H10**  
+Chest-based cardiac monitoring
+
+:::
+
+::: {.column width="50%"}
+
+💡 **Polar Verity Sense**  
+Optical heart-rate monitoring
+
+🏃 **Axivity AX3**  
+Raw triaxial accelerometry / actigraphy
+
+👁️ **Mobile eye trackers**  
+Gaze behaviour in real-world interaction
+
+:::
+
+::::
+
+<br>
+
+::: {.tiny}
+Not every device provides real-time access to the raw signal: today the goal is to inspect the devices, try the placement, and understand what kind of data each technology can produce.
+:::
+
+:::
+
+## At each station, ask five questions
+
+::: {.nonincremental}
+
+:::: {.columns}
+
+::: {.column width="10%"}
+
+### 1
+### 2
+### 3
+### 4
+### 5
+
+:::
+
+::: {.column width="90%"}
+
+### Where is the sensor placed?
+### What does it **directly** measure?
+### What variables can be **derived** from it?
+### What could contaminate or distort the signal?
+### What kind of user study could use it?
+
+:::
+
+::::
+
+:::
+
+<br>
+
+::: {.fragment}
+
+### While trying the devices...
+
+::: {.prompt-box}
+
+Do not ask only **“What can this wearable measure?”**
+
+Ask instead: **“What conclusion about a user could I reasonably support with these measurements?”**
+
+:::
+
+:::
+
+# Part 2 — Group project
+
+## Your challenge
+
+::: {.nonincremental}
+
+In groups of approximately **3–5 students**, you will design a **wearable-based user study** starting from a case study.
+
+Across the next practical sessions, your project will progressively include:
+
+1. Research question and construct(s)
+2. Wearable signal(s) and sensor(s)
+3. Study protocol and data acquisition
+4. Pre-processing and feature extraction
+5. Analysis and visualization plan
+6. Interpretation, confounders, and limitations
+
+:::
+
+## From a case study to a research plan
+
+::: {.nonincremental}
+
+Each group will work on one case study. For your case, start from the same chain:
+
+<br>
+
+### 👤 **What is the user doing?**
+
+### 💡 **What construct are you interested in?**
+
+### ⚡ **Which biosignal could reflect a relevant process?**
+
+### ⌚ **Which wearable could measure it in this context?**
+
+### 💥 **What could confound your interpretation?**
+
+:::
+
+## One familiar example
+
+::: {.case-card}
+
+<div class="case-title">Health chatbot 🤖💬</div>
+
+A user interacts with a chatbot that asks questions about health behaviours and gives personalised feedback.
+
+Some questions are neutral, while others concern more sensitive topics.
+
+:::
+
+<br>
+
+::: {.fragment}
+
+You already discussed this scenario in the introductory session.  
+**The group project goes one step further:** turn a broad scenario into a *testable user study*.
+
+:::
+
+# Your case studies
+
+## Case 1 — AI study assistant 🤖📚
+
+::: {.case-card}
+
+A university student uses an **AI study assistant** while solving a set of difficult problems.
+
+The assistant sometimes provides **accurate and helpful suggestions**, while in another condition it provides **uncertain or misleading suggestions**.
+
+:::
+
+<br>
+
+### How would you study the user's experience and response to the system?
+
+![](img/case1.png){width="500"}
+
+## Case 2 — Notification interruptions 📱🔔
+
+::: {.case-card}
+
+A user performs a **20-minute focused computer task**.
+
+In one condition, smartphone notifications are disabled. In another, the user receives **frequent task-unrelated notifications**.
+
+:::
+
+<br>
+
+### How would you study the impact of digital interruptions on the user?
+
+![](img/case2.png){width="500"}
+
+## Case 3 — Adaptive videogame 🎮📈
+
+::: {.case-card}
+
+A player interacts with a videogame whose difficulty adapts automatically.
+
+In one condition, difficulty remains well matched to performance. In another, the game becomes **unexpectedly too easy or too difficult**.
+
+:::
+
+<br>
+
+### How would you investigate the player's response to adaptive difficulty?
+
+![](img/case3.png){width="500"}
+
+## Case 4 — Digital navigation 🚶📍
+
+::: {.case-card}
+
+A user follows an unfamiliar route while using a mobile navigation system.
+
+The system provides guidance either mainly through **visual instructions on the screen** or through **audio instructions**.
+
+:::
+
+<br>
+
+### How would you compare the user experience across the two navigation modes?
+
+![](img/case4.png){width="500"}
+
+## Case 5 — After-hours work notifications 💻🌙
+
+::: {.case-card}
+
+Employees use a work communication platform across several days.
+
+During some evenings, **work-related notifications remain active after working hours**; during others, notifications are silenced.
+
+:::
+
+<br>
+
+### How would you study possible consequences for recovery and sleep?
+
+![](img/case5.png){width="500"}
+
+# Today's group work
+
+## Deliverable: Study idea
+
+::: {.nonincremental}
+::: {style="font-size: 0.9em;"}
+
+By the end of today's session, agree on:
+
+1. **Research question**  
+   What exactly do you want to know?
+
+2. **Target construct(s)**  
+   What aspect of the user's experience or state matters?
+
+3. **Biosignal(s) + wearable sensor(s)**  
+   What would you measure, and with what device?
+
+4. **Rationale**  
+   Why should those measurements help answer the research question?
+
+5. **Main confounder / alternative explanation**  
+   What else could produce the same physiological or behavioural pattern?
+
+:::
+:::
+
+## Keep the scope realistic
+
+::: {.nonincremental}
+
+Your goal is **not** to design the most complicated study possible.
+
+<br>
+
+::: {.prompt-box}
+
+A strong project has a **clear question**, a **defensible measurement strategy**, and an explicit awareness of what the data **cannot** tell you.
+
+:::
+
+<br>
+
+Prefer a simple design that you can justify over a complex design full of measurements.
+
+:::
+
+## 60–90 second pitch
+
+::: {.nonincremental}
+
+One speaker per group. Tell us:
+
+### 1. 👤 What is your user-realted research question?
+### 2. 💡 What construct(s) are you interested in?
+### 3. ⚡What biosignal(s) will you use?
+### 4. ⌚ Which wearable(s) will you use?
+### 5. 💥 What are the biggest challenges or confounders?
+<br>
+
+::: {style="font-size: 0.8em;"}
+You do **not** need a complete protocol yet — we will develop that next week.
+:::
+
+:::
+
+## Next session — Study design & data recording
+
+::: {.nonincremental}
+
+Next time we will move from the idea to the **recording protocol**:
+
+- conditions, tasks, and timing
+- baseline and recovery periods
+- wearable placement and recording
+- event timing / synchronization
+- movement and other confounders
+
+<br>
+
+### We will also collect a common wearable dataset to use in the following R sessions.
+
+:::
+
+## See you next week!
