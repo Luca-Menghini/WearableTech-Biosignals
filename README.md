@@ -6,3 +6,7 @@ Materials used in the Small Group Activity [Wearable Technologies &amp; Biosigna
 ## Practical session #1
 
 [Slides](https://luca-menghini.github.io/WearableTech-Biosignals/practical-session-1.html)
+
+## Practical session #2
+
+[Slides](https://luca-menghini.github.io/WearableTech-Biosignals/practical-session-2.html)
