@@ -1,0 +1,338 @@
+---
+title: "Wearable technologies and<br> biosignals for user studies<br> [PS0000022]"
+subtitle: "Practical session #2 — Study design & data recording"
+author: "University of Padova"
+format:
+  revealjs:
+    self-contained: true
+    theme: mytheme.scss
+    logo: "img/logo.png"
+    transition: none
+    transition-speed: slow
+    background-transition: fade
+    slide-number: c/t
+    show-slide-number: all
+    incremental: true
+
+include-in-header:
+  - text: |
+      <style>
+      img { display: block; margin-left: auto; margin-right: auto; }
+      .reveal .fragment { color: var(--r-main-color); }
+      .reveal .slide-logo { height: 80px !important; max-height: unset !important; max-width: unset !important; }
+      /* Additional styles for Practical Session #2 */
+      .reveal .timeline-live { display: flex; gap: 6px; width: 100%; margin: .65em auto .4em; }
+      .reveal .time-seg { flex: var(--span); min-width: 0; color: white; border-radius: 9px; padding: .65em .12em; text-align: center; background: var(--fill); }
+      .reveal .time-seg b { display: block; color: white; font-size: .78em; }
+      .reveal .time-seg small { display: block; color: white; font-size: .55em; }
+      .reveal .task-rule { border-left: 5px solid #4657A9; padding: .16em .65em; margin: .32em 0; }
+      .reveal .text-small { font-size: .8em; }
+      /* This slide is deliberately entirely blank, for the QR instructions. */
+      .reveal:has(.slides section.blank-qr-slide.present) .slide-logo,
+      .reveal:has(.slides section.blank-qr-slide.present) .slide-number { display: none !important; }
+      </style>
+fig-align: center
+---
+
+## Today
+
+::: {.nonincremental}
+
+<br>
+
+**10:30–11:05**  ⌚ Set up 20 devices and run our class experiment
+
+<br>
+
+**11:05–11:30**  🔎 Critically review the experimental protocol
+
+<br>
+
+**11:30–11:55**  👥 Develop your group's wearable-based study protocol
+
+<br>
+
+**11:55–12:00**  ✅ One design decision per group & wrap-up
+
+:::
+
+## Our class experiment: digital interruptions
+
+::: {.nonincremental}
+
+::: {.case-card}
+<div class="case-title">Digital interruptions during computer work 💻🔔</div>
+
+**Question:** How do interruptions relate to task performance, perceived workload, and physiological responses?
+:::
+
+<br>
+
+:::: {.columns}
+::: {.column width="50%"}
+
+### Task 1 — Uninterrupted
+
+- Excel **Worksheet A**
+- No extra requests
+- **3 minutes**
+
+:::
+::: {.column width="50%"}
+
+### Task 2 — Interrupted
+
+- Excel **Worksheet B**
+- Four task-unrelated **Zoom messages**
+- **3 minutes**
+
+:::
+::::
+
+::: {.prompt-box}
+We all complete the tasks **in the same order**. Afterward, we will evaluate what this means for the study's validity.
+:::
+
+:::
+
+## Your Excel task: check the tickets
+
+::: {.nonincremental}
+
+For each customer-support ticket, enter **O** (OK) or **E** (Error).
+
+<div class="task-rule"><b>Rule 1:</b> High-priority tickets must receive a first reply within <b>2 hours</b>.</div>
+<div class="task-rule"><b>Rule 2:</b> Normal-priority tickets must receive a first reply within <b>24 hours</b>.</div>
+<div class="task-rule"><b>Rule 3:</b> Closed tickets must have a recorded first reply.</div>
+
+<br>
+
+- Start from the **first row** and work down, without skipping rows.
+- **Do not use** filters, formulas, or automatic checks.
+- Aim for **accuracy**, not maximum speed.
+- Stop when instructed; you are **not expected to finish 100 rows**.
+
+::: {.notes}
+Allow 1–2 minutes for practice examples before the baseline; practice must not use experimental rows. Both worksheets contain 100 tickets, but their equivalent difficulty has not been empirically established.
+:::
+
+:::
+
+## During Task 2: Zoom interruptions
+
+::: {.nonincremental}
+
+The experimenter will send **four messages** at +1, +2, +3, and +4 minutes.
+
+When a message appears:
+
+1. **Pause** the Excel task.
+2. Read the request and **reply privately** to the experimenter.
+3. Resume Excel **where you left off**.
+
+:::: {.columns}
+::: {.column width="70%"}
+
+![](img/zoom-interruptions.png){width="800"}
+
+:::
+
+::: {.column width="30%"}
+
+Keep the Zoom chat visible during **both** tasks. Silence microphones, speakers, and unrelated notifications.
+
+:::
+:::
+:::
+
+## EmbracePlus setup
+
+Download the Empatica Care App and follow the instruction in the printed paper assigned to your station.
+
+![](img/qrcode.PNG){width="500"}
+
+## Before the recording: wearable checklist
+
+::: {.nonincremental}
+
+:::: {.columns}
+::: {.column width="50%"}
+
+### ⌚ EmbracePlus
+
+- Wear on the **non-dominant wrist**, if possible.
+- Ensure secure fit and **good skin contact**.
+- Check that **recording is active**.
+- Avoid adjusting the band during recording.
+
+:::
+::: {.column width="50%"}
+
+### 💻 Computer
+
+- Excel workbook **open**; Task A ready
+- Qualtrics questionnaire with your ID
+- Zoom meeting and chat **open**
+- Microphone and speakers **muted**
+- No other notifications
+
+:::
+::::
+
+:::
+
+## Event tags and the experiment log
+
+::: {.nonincremental}
+
+**Press the EmbracePlus event-tag button when instructed**, at the start of each phase:
+
+| **Tag** | **Phase starts** |
+|:---:|:---|
+| **1** | Baseline |
+| **2** | Task 1 — Uninterrupted |
+| **3** | Task 2 — Interrupted |
+| **4** | Recovery |
+
+<br>
+
+:::
+
+## Our recording protocol — 14 minutes
+
+::: {.nonincremental}
+
+<div class="timeline-live">
+  <div class="time-seg" style="--span:2; --fill:#788999"><b>Baseline</b><small>0–3 min</small></div>
+  <div class="time-seg" style="--span:5; --fill:#367cba"><b>Task 1</b><small>4–6 min</small></div>
+  <div class="time-seg" style="--span:5; --fill:#a45191"><b>Task 2</b><small>7–9 min</small></div>
+  <div class="time-seg" style="--span:2; --fill:#61957c"><b>Recovery</b><small>10–12 min</small></div>
+</div>
+
+<br>
+
+**Baseline:** Sit quietly, eyes open, hands resting.
+
+**Task 1:** Check **Worksheet A** with no interruptions.
+
+**Task 2:** Check **Worksheet B**; answer Zoom messages.
+
+**Recovery:** Stop typing; sit quietly and avoid the computer.
+
+::: {.prompt-box}
+**All participants start together.** Follow the instructor's cues; do not anticipate a phase change.
+:::
+
+::: {.notes}
+All 20 students record simultaneously. Start only once device acquisition is confirmed. The experimenter announces boundaries at 0, 2, 7, 12 and 14 minutes and the Zoom host sends messages at 8, 9, 10 and 11 minutes on the global clock. No pause between tasks by design.
+:::
+
+:::
+
+## After recording: saving and sharing your excel sheet
+
+::: {.nonincremental}
+
+- Save the completed Excel workbook by putting your anonymized ID code as the file name
+- Upload the Excel sheet on the Google Drive folder linked on Moodle
+
+:::
+
+## Critical review — be the reviewers
+
+::: {.nonincremental}
+
+<br>
+
+::: {.case-card}
+<div class="case-title">Peer review exercise 🔎</div>
+
+<br>
+
+Imagine this experiment were submitted to a scientific journal. **Can any Task 1 vs Task 2 difference be attributed specifically to digital interruptions?**
+:::
+
+<br>
+
+:::
+
+## Debrief — what can we conclude?
+
+::: {.nonincremental}
+
+:::: {.columns}
+::: {.column width="50%"}
+
+### Design limitations
+
+- Fixed order: **practice / fatigue**
+- No rest between tasks: **carryover**
+- Worksheet A vs B: **task equivalence**
+- No separate recovery for each condition
+
+:::
+::: {.column width="50%"}
+
+### Measurement limitations
+
+- Typing and tagging: **motion artefacts**
+- Task-specific movement differences
+- **Arousal ≠ stress**
+
+:::
+::::
+
+<br>
+
+::: {.prompt-box}
+The data can show **descriptive differences** between two consecutive tasks, but cannot isolate a **causal effect** of interruptions.
+:::
+
+::: {.notes}
+Show this slide only after students have discussed their own criticisms. Ask which single redesign (counterbalancing, washout, task matching, separate recovery) would be most useful and feasible.
+:::
+
+:::
+
+## Group project — design your own protocol
+
+::: {.nonincremental}
+
+Return to the **user-study case** chosen in Practical Session #1.
+
+<br>
+
+In your group, produce a **one-page study protocol**:
+
+| **Element** | **Define it clearly** |
+|:---|:---|
+| Research question | What do you want to test? |
+| User task / conditions | What will participants do? |
+| Sequence | What happens, and for how long? |
+| Sensors / outcomes | What signals, behaviours and ratings? |
+| Markers / log | How will you align events and signals? |
+| Biggest confounder | What else could explain the results? |
+
+::: {.notes}
+The group project is a research proposal, not an obligation to collect new study-specific data. Encourage simple, feasible tasks; the common class recording supplies the dataset for next week's practicals.
+:::
+
+:::
+
+## One design decision — and next session
+
+::: {.nonincremental}
+
+### A one-minute update from each group
+
+- What are your **conditions / study phases**?
+- How will you **synchronize** the wearable data?
+- Which **confounder** will you address first?
+
+<br>
+
+::: {.prompt-box}
+**Next session — Signal pre-processing in R:** align tags, inspect raw PPG and movement, identify artefacts, and assess data quality before extracting features.
+:::
+
+:::
